@@ -1,7 +1,7 @@
 {
-  "name": "test",
+  "name": "s3ctl",
   "version": "1.0.0",
-  "description": "",
+  "description": "A fast, safe, S3-compatible CLI for Garage / MinIO / custom S3 endpoints.",
   "main": "script.js",
   "bin": "script.js",
   "scripts": {

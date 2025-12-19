@@ -32,16 +32,18 @@ A fast, safe, **S3-compatible CLI** for **Garage / MinIO / custom S3 endpoints**
 
 ## Installation
 
-### Option 1 — Native binary (recommended)
-
-Download from: 
-[**GitHub Releases**](https://github.com/harshshah6/s3ctl/releases/latest)
+### Option 1 — Using node
 
 ```bash
-./s3ctl-linux --help
-./s3ctl-macos --help
-./s3ctl-win.exe --help
+git clone github.com/harshshah6/s3ctl
+cd s3ctl
 ```
+
+```bash
+npm i
+node script.js
+```
+>ensure you create .env file before running script
 
 ---
 
