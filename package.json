@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "bin": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.954.0",
+    "@aws-sdk/lib-storage": "^3.954.0",
+    "@aws-sdk/s3-request-presigner": "^3.954.0",
+    "cli-progress": "^3.12.0",
+    "commander": "^14.0.2",
+    "dotenv": "^17.2.3"
+  }
+}

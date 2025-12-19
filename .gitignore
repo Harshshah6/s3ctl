@@ -1,0 +1,45 @@
+# Dependency directories
+node_modules/
+/jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables file
+.env
+.env.test
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage
+*.lcov
+.nyc_output
+
+# Build artifacts
+build/
+dist/
+.next/
+out/
+.cache/
+
+# Editor/OS specific files
+.DS_Store # macOS
+Thumbs.db # Windows
+.vscode/ # VS Code settings (optional, can be shared)
