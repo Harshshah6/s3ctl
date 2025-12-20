@@ -9,6 +9,7 @@ import {
     GetObjectCommand,
     DeleteObjectCommand,
     PutObjectCommand,
+    ListBucketsCommand,
 } from "@aws-sdk/client-s3";
 import { Upload } from "@aws-sdk/lib-storage";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
@@ -81,6 +82,16 @@ async function listAllObjects(bucket, prefix = "") {
     } while (token);
 
     return objects;
+}
+
+async function listBuckets() {
+    const command = new ListBucketsCommand({});
+    const response = await s3.send(command);
+
+    return (response.Buckets || []).map(bucket => ({
+        name: bucket.Name || '',
+        creationDate: bucket.CreationDate,
+    }));
 }
 
 async function parallelRun(items, limit, fn) {
@@ -241,9 +252,18 @@ program
     });
 
 program
-    .command("list <bucket> [prefix]")
+    .command("list [bucket] [prefix]")
+    .option("-b, --buckets", "List All Buckets")
     .description("List objects (recursive)")
-    .action(async (bucket, prefix = "") => {
+    .action(async (bucket, prefix = "", opts) => {
+        if (opts.buckets) {
+            const objects = await listBuckets();
+
+            for (const o of objects) {
+                console.log(o.name, o.creationDate);
+            }
+            return;
+        }
         const objects = await listAllObjects(bucket, prefix);
         let total = 0;
 
